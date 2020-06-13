@@ -1,0 +1,9 @@
+#!/usr/bin/ruby
+
+chars = `figlet -f bloody " hello,\n    world"`.split('')
+reset="\e[0m"
+color="\e[32m"
+
+chars.collect!{|c| ['█','▓','▀','▄','▌'].include?(c) ? color+c+reset : c }
+
+puts chars.join('')
